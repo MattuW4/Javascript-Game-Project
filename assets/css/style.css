@@ -15,6 +15,7 @@ h2 {
 
 body {
     font-family: 'Press Start 2P', sans-serif;
+    background-color: rgb(182, 182, 201);
 }
 
 /* Structural CSS */
@@ -31,7 +32,19 @@ body {
 }
 
 .game-option-button {
-    margin: 2rem;
+    margin: 0rem;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: white;
+    border-width: 3px;
+    border-style: solid;
+    font-size: 41px;
+}
+
+.game-option-button:hover {
+    background-color: black;
+    color: white;
 }
 
 .game-title {
@@ -59,8 +72,8 @@ body {
 
 .hands-image {
     border-radius: 50%;
-    width: 150px;
-    height: 150px;
+    width: 140px;
+    height: 140px;
 }
 
 .player-weapon-choice-button {
@@ -69,6 +82,7 @@ body {
     outline: none;
     cursor: pointer;
     flex-wrap: wrap;
+    transition: 0.5s;
 }
 
 .player-weapon-choice-button:hover {

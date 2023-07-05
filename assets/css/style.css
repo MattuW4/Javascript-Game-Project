@@ -16,3 +16,16 @@ body {
 }
 
 /* Structural CSS */
+
+.game-info-banner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.game-option-container {
+    padding: 5rem;
+}
+
+.game-option-button {
+    margin: 2rem;
+}

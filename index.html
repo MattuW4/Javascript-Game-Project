@@ -22,8 +22,9 @@
 
 <body>
     <!-- Header, Rules and Game Reset-->
-    <header>
-        <h1>Rock,
+    <header class="game-info-banner">
+        <h1 class="game-title">
+            Rock,
             <br>
             Paper,
             <br>
@@ -33,7 +34,7 @@
             <br>
             Spock.
         </h1>
-        <div>
+        <div class="game-option-buttons">
             <button>#</button>
             <button>#</button>
         </div>
@@ -41,20 +42,31 @@
 
     <!-- Game Section -->
 
-    <section>
-        <div>
-            <h2>Choose your weapon!</h2>
-            <button>#</button>
-            <button>#</button>
-            <button>#</button>
-            <button>#</button>
-            <button>#</button>
+    <section class="game-section">
+        <div class="game-outer-container">
+            <h2 class="weapon-choice-instruction">Choose your weapon!</h2>
+            <div class="player-weapon-container">
+                <button>#</button>
+                <button>#</button>
+                <button>#</button>
+                <button>#</button>
+                <button>#</button>
+            </div>
+        </div>
+        <div class="overall-results">
+            <div class="round-number">
+                <p>Round number:</p>
+            </div>
+            <div class="overall-scores">
+                <p class="player-score">Player:</p>
+                <p class="computer-score">Computer:</p>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>The footer content will go here</p>
+        <p class="footer-content">The footer content will go here</p>
     </footer>
 
     <script src="assets/js/script.js"></script>

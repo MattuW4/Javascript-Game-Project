@@ -5,10 +5,12 @@
 /* Fonts */
 h1 {
     font-size: 2rem;
+    letter-spacing: 3px;
 }
 
 h2 {
     font-size: 2rem;
+    letter-spacing: 12px;
 }
 
 body {
@@ -32,10 +34,21 @@ body {
     margin: 2rem;
 }
 
+.game-title {
+    padding-left: 2rem;
+}
+
 /* Game section */
 
 .game-section {
     display: grid;
+    margin: auto;
+    justify-items: center;
+
+}
+
+.weapon-choice-instruction {
+    text-align: center;
 }
 
 .player-weapon-container {
@@ -44,10 +57,10 @@ body {
     flex-wrap: wrap;
 }
 
-section>div {
+/*section>div {
     justify-self: center;
     grid-row: auto;
-}
+}*/
 
 /* Footer */
 
@@ -55,5 +68,6 @@ footer {
     position: absolute;
     bottom: 0;
     text-align: center;
-    width: 100%;
+    width: 99%;
+
 }

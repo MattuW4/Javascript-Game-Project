@@ -17,9 +17,11 @@ body {
 
 /* Structural CSS */
 
+/* Banner, option buttons and title*/
 .game-info-banner {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .game-option-container {
@@ -28,4 +30,21 @@ body {
 
 .game-option-button {
     margin: 2rem;
+}
+
+/* Game section */
+
+.game-section {
+    display: grid;
+}
+
+.player-weapon-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+section>div {
+    justify-self: center;
+    grid-row: auto;
 }

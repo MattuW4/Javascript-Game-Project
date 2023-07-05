@@ -24,15 +24,15 @@ body {
 .game-info-banner {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
+
 }
 
-.game-option-container {
-    padding: 5rem;
+.game-options-container {
+    padding: 4rem;
 }
 
-.game-option-button {
-    margin: 0rem;
+.help-menu-button {
+    margin: 0.625rem;
     width: 4rem;
     height: 4rem;
     border-radius: 50%;
@@ -42,7 +42,23 @@ body {
     font-size: 41px;
 }
 
-.game-option-button:hover {
+.game-refresh-button {
+    margin: 0.625rem;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: white;
+    border-width: 3px;
+    border-style: solid;
+    font-size: 41px;
+}
+
+.game-refresh-button:hover {
+    background-color: black;
+    color: white;
+}
+
+.help-menu-button:hover {
     background-color: black;
     color: white;
 }
@@ -113,7 +129,6 @@ body {
 
 footer {
     padding-top: 8.125rem;
-    ;
     text-align: center;
     width: 99%;
 
@@ -138,5 +153,39 @@ footer {
         grid-column: 2/2;
     }
 
+    .player-weapon-choice-button:hover {
+        transform: scale(1.2);
+    }
 
+    .hands-image {
+        border-radius: 50%;
+        width: 110px;
+        height: 110px;
+    }
+}
+
+@media screen and (max-width: 650) {
+    .game-options-container {
+        padding: 1rem 0rem 3rem 5rem;
+    }
+
+    .help-menu-button {
+
+        margin: 0.625rem;
+    }
+
+    .game-refresh-button {
+
+        margin: 0.625rem;
+    }
+}
+
+@media screen and (max-width: 590px) {
+    .game-info-banner {
+        flex-wrap: wrap;
+    }
+
+    .player-weapon-choice-button:hover {
+        transform: scale(1.1);
+    }
 }

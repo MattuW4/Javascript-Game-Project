@@ -57,6 +57,16 @@ body {
     flex-wrap: wrap;
 }
 
+.hands-image {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+
+.player-weapon-choice-button {
+    
+}
+
 /*section>div {
     justify-self: center;
     grid-row: auto;

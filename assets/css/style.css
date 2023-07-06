@@ -158,7 +158,7 @@ footer {
     color: white;
 }
 
-/* Modal 
+/* Modal */
 
 .rule-hands {
     width: 50px;
@@ -166,26 +166,27 @@ footer {
 }
 
 .modal-outer-container {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
+    position: absolute;
     top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color:
-        /*rgba(182, 182, 201, 0.5)
-        black;
+    width: 100vw;
+    height: 74rem;
+    background-color: rgba(0, 0, 0, 0.8);
+
+
 }
 
 .inner-modal-container {
-    background-color: #fefefe;
+    background-color: gray;
     margin: 15% auto;
-    padding: 20px;
+    padding: 14px;
     border: 1px solic #888;
     width: 80%;
-} */
+    text-align: center;
+}
+
+div>ul {
+    list-style-type: none;
+}
 
 
 

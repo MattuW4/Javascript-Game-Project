@@ -221,6 +221,7 @@ footer {
     margin: 2rem;
     padding: 0.5rem;
     border: solid;
+    text-transform: uppercase;
 }
 
 .return-button:hover {

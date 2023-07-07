@@ -51,8 +51,8 @@ document.addEventListener('DOMContentLoaded', function () {
             // Write selection into player choice display
             document.getElementById("playerChoice").innerHTML = `${choiceSelected}`;
 
+            // Generate random computer choice and write to the computer output display
             let randomComputer = choices[Math.floor(Math.random() * choices.length)];
-
             document.getElementById("computerChoice").innerHTML = `${randomComputer.name}`;
         });
     }

@@ -1,28 +1,19 @@
 //Variable declarations
-const choices = [{
+const selectionButtons = document.querySelectorAll("[data-selection]");
+const CHOICES = [{
     name: 'rock',
     image: './assets/images/Rock.png',
-    beats: ['scissors', 'lizard']
+    beats: 'scissors'
 },
 {
     name: 'paper',
     image: './assets/images/Paper.png',
-    beats: ['rock', 'spock']
+    beats: 'rock',
 },
 {
     name: 'scissors',
     image: './assets/images/Scissors.png',
-    beats: ['paper', 'lizard']
-},
-{
-    name: 'lizard',
-    image: './assets/images/Lizard.png',
-    beats: ['paper', 'spock']
-},
-{
-    name: 'spock',
-    image: './assets/images/Spock.png',
-    beats: ['rock', 'scissors']
+    beats: 'paper'
 }
 ];
 
@@ -47,19 +38,36 @@ function hideModal() {
 // Informed by the Code Institute Love Maths project
 // Wait for the DOM to finish loading before running game
 // Get button elements and add event listeners to them
-document.addEventListener("DOMContentLoaded", function () {
-    let buttons = document.querySelectorAll(".player-weapon-choice-button");
 
-    // Use function to write player choice to output in arena section
-    for (let button of buttons) {
-        button.addEventListener("click", function () {
-            if (this.getAttribute("data-choice") === "") {
 
-            } else {
-                let gameType = this.getAttribute("data-choice");
-                document.getElementById("playerChoice").innerHTML = `${gameType}`;
-            }
-        });
-    }
+selectionButtons.forEach(selectionButton => {
+    selectionButton.addEventListener("click", e => {
+        const selectionName = selectionButton.dataset.selection;
+        const selection = CHOICES.find(selection => selection.name === selectionName);
+        makeSelection(selection);
+    });
 });
 
+function makeSelection(selection) {
+    const computerSelection = randomSelection();
+    const yourWinner = isWinner(selection, computerSelection);
+    const computerWinner = isWinner(computerSelection, selection);
+    console.log(selection);
+
+
+    addSelectionResult(computerSelection, computerWinner);
+    addSelectionResult(selection, yourWinner);
+}
+
+function randomSelection() {
+    const randomIndex = Math.floor(Math.random() * CHOICES.length);
+    return CHOICES[randomIndex];
+}
+
+function isWinner(selection, opponentSelection) {
+    return selection.beats === opponentSelection.name;
+}
+
+function addSelectionResult(selection, winner) {
+
+}

@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Rock, Paper, Scissors, Lizard, Spock JavaScript Game">
-    <meta name="keywords" content="rock, paper, scissors, lizard, spock, JavaScript, Game">
+    <meta name="description" content="Rock, Paper, Scissors, JavaScript Game">
+    <meta name="keywords" content="rock, paper, scissors, JavaScript, Game">
     <meta name="author" content="Matt Waters">
 
     <!-- Css style sheet -->
     <link rel="stylesheet" href="assets/css/style.css">
 
     <!-- Title adn Favicon -->
-    <title>Rock, Paper, Scissors, Lizard, Spock</title>
+    <title>Rock, Paper, Scissors JavaScript Game</title>
     <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
 
     <!-- Font awesome link-->
@@ -30,10 +30,7 @@
             <br>
             Scissors,
             <br>
-            Lizard,
-            <br>
-            Spock.
-        </h1>
+            </h1>
         <div class="game-options-container">
             <button aria-label="Refresh button" class="game-refresh-button"><i
                     class="fa-solid fa-arrows-rotate"></i></button>
@@ -48,19 +45,19 @@
         <div class="game-outer-container">
             <h2 class="weapon-choice-instruction">Choose your weapon!</h2>
             <div class="player-weapon-container">
-                <button aria-label="Rock" class="player-weapon-choice-button" data-choice="rock"><img
+                <button aria-label="Rock" class="player-weapon-choice-button" data-selection="rock"><img
                         class="hands-image" src="assets/images/Rock.png" alt="Image of hand in shape of rock"></button>
-                <button aria-label="Paper" class="player-weapon-choice-button" data-choice="paper"><img
+                <button aria-label="Paper" class="player-weapon-choice-button" data-selection="paper"><img
                         class="hands-image" src="assets/images/Paper.png"
                         alt="Image of hand in shape of paper"></button>
-                <button aria-label="Scissors" class="player-weapon-choice-button" data-choice="scissors"><img
+                <button aria-label="Scissors" class="player-weapon-choice-button" data-selection="scissors"><img
                         class="hands-image" src="assets/images/Scissors.png"
                         alt="Image of hand in shape of scissors"></button>
-                <button aria-label="Lizard" class="player-weapon-choice-button" data-choice="lizard"><img
+                <!--<button aria-label="Lizard" class="player-weapon-choice-button" data-selection="lizard"><img
                         class="hands-image" src="assets/images/Lizard.png"
                         alt="Image of hand in shape of lizard"></button>
-                <button aria-label="Spock" class="player-weapon-choice-button" data-choice="spock"><img
-                        class="hands-image" src="assets/images/Spock.png" alt="Image of spock hand shape"></button>
+                <button aria-label="Spock" class="player-weapon-choice-button" data-selection="spock"><img
+                        class="hands-image" src="assets/images/Spock.png" alt="Image of spock hand shape"></button>-->
             </div>
         </div>
         <div class="arena-terminal">
@@ -68,7 +65,7 @@
                 <p>Player choice:<span id="playerChoice"></span></p>
             </div>
             <div class="computer-choice-output">
-                <p>Computer Choice:<span></span></p>
+                <p>Computer Choice:<span id="computerChoice"></span></p>
             </div>
             <div class="arena-victor-output">
                 <p>Winner:<span></span></p>
@@ -113,7 +110,7 @@
                     <li><img class="rule-hands" src="assets/images/Scissors.png"
                             alt="Image of hand in shape of scissors"><span class="effect"> cuts </span><img
                             class="rule-hands" src="assets/images/Paper.png" alt="Image of hand in shape of paper"></li>
-                    <li><img class="rule-hands" src="assets/images/Lizard.png"
+                    <!--<li><img class="rule-hands" src="assets/images/Lizard.png"
                             alt="Image of hand in shape of lizard"><span class="effect"> bites </span><img
                             class="rule-hands" src="assets/images/Spock.png" alt="Image of spock hand shape"></li>
                     <li><img class="rule-hands" src="assets/images/Spock.png" alt="Image of spock hand shape"> <span
@@ -136,7 +133,7 @@
                     <li><img class="rule-hands" src="assets/images/Spock.png" alt="Image of spock hand shape"> <span
                             class="effect"> melts
                         </span><img class="rule-hands" src="assets/images/Scissors.png"
-                            alt="Image of hand in shape of scissors"></li>
+                            alt="Image of hand in shape of scissors"></li>-->
                 </ul>
                 <div class="modal-button-container">
                     <button class="return-button" aria-label="Return to arena button">Return to arena</button>

@@ -1,3 +1,4 @@
+//Variable declarations
 const choices = [{
     name: 'rock',
     image: './assets/images/Rock.png',
@@ -25,19 +26,40 @@ const choices = [{
 }
 ];
 
-let modal = document.getElementById("my-modal");
-let openModal = document.getElementById("open-modal-button");
-let closeModal = document.querySelector(".return-button");
+const modal = document.getElementById("my-modal");
+const openModal = document.getElementById("open-modal-button");
+const closeModal = document.querySelector(".return-button");
 
+// Modal open and hide 
 openModal.addEventListener("click", showModal);
 closeModal.addEventListener("click", hideModal);
 
+/** Show modal function */
 function showModal() {
     modal.style.display = "block";
 }
 
+/** Hide modal function */
 function hideModal() {
     modal.style.display = "none";
 }
 
+// Informed by the Code Institute Love Maths project
+// Wait for the DOM to finish loading before running game
+// Get button elements and add event listeners to them
+document.addEventListener("DOMContentLoaded", function () {
+    let buttons = document.querySelectorAll(".player-weapon-choice-button");
+
+    // Use function to write player choice to output in arena section
+    for (let button of buttons) {
+        button.addEventListener("click", function () {
+            if (this.getAttribute("data-choice") === "") {
+
+            } else {
+                let gameType = this.getAttribute("data-choice");
+                document.getElementById("playerChoice").innerHTML = `${gameType}`;
+            }
+        });
+    }
+});
 

@@ -122,6 +122,7 @@ body {
     align-items: baseline;
     margin-top: 3rem;
     padding-left: 5rem;
+    text-transform: uppercase;
 }
 
 .player-choice-output {
@@ -149,6 +150,7 @@ body {
     align-items: baseline;
     margin-top: 3rem;
     padding-left: 5rem;
+    text-transform: uppercase;
 }
 
 .player-score {

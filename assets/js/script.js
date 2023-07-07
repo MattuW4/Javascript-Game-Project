@@ -34,3 +34,22 @@ function showModal() {
 function hideModal() {
     modal.style.display = "none";
 }
+// Informed by Math Project, Code Institue and Web Dev Simplified Tutorial
+// Wait for the DOM to load before running the game
+// Get the game section button elements and add event listeners to them
+document.addEventListener('DOMContentLoaded', function () {
+    let gameSectionButtons = document.querySelectorAll('.player-weapon-choice-button');
+
+    for (let gameSectionButton of gameSectionButtons) {
+
+        gameSectionButton.addEventListener("click", function () {
+            // Identify clicked gameSectionButton
+            let choiceSelected = this.getAttribute("data-choice");
+            let userChoice = choices.find(choice => choice.name === choiceSelected);
+
+            console.log(userChoice);
+            // Write selection into player choice display
+            document.getElementById("playerChoice").innerHTML = `${choiceSelected}`;
+        });
+    }
+});

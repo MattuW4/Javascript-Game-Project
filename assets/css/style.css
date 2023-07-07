@@ -187,6 +187,10 @@ footer {
 
 /* Modal */
 
+.modal-header {
+    padding-bottom: 2rem;
+}
+
 .rule-hands {
     width: 50px;
     border-radius: 50%;
@@ -196,18 +200,33 @@ footer {
     position: absolute;
     top: 0;
     width: 100vw;
-    height: 74rem;
+    height: 87rem;
     background-color: rgba(0, 0, 0, 0.8);
     display: none;
 }
 
 .inner-modal-container {
     background-color: gray;
-    margin: 15% auto;
+    margin: 12rem auto;
     padding: 14px;
     border: 1px solic #888;
     width: 80%;
     text-align: center;
+}
+
+.return-button {
+    border-radius: 5%;
+    background-color: white;
+    font-family: inherit;
+    margin: 2rem;
+    padding: 0.5rem;
+    border: solid;
+}
+
+.return-button:hover {
+    transform: (1.2);
+    background-color: black;
+    color: white;
 }
 
 div>ul {

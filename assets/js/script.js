@@ -25,11 +25,19 @@ const choices = [{
 }
 ];
 
-let modal = document.getElementById("myModal");
-let btn = document.getElementById("myBtn");
+let modal = document.getElementById("my-modal");
+let openModal = document.getElementById("open-modal-button");
+let closeModal = document.querySelector(".return-button");
 
-btn.addEventListener("click", myFunction);
+openModal.addEventListener("click", showModal);
+closeModal.addEventListener("click", hideModal);
 
-function myFunction() {
-    document.getElementById("myModal").style.display = "block";
+function showModal() {
+    modal.style.display = "block";
 }
+
+function hideModal() {
+    modal.style.display = "none";
+}
+
+

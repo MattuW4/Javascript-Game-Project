@@ -1,100 +1,121 @@
 // Main game 
 
 // Variables
-const game = () => {
-    let playerCount = 0;
-    let computerCount = 0;
-    let roundCount = 0;
+const choiceButtons = document.querySelectorAll("[data-choice");
+const winnerOutput = document.querySelector("[arenaVictorOutput]");
+const computerCount = document.querySelector("[computerScore]");
+const round = document.querySelector("[roundNumber]");
+const playerCount = document.querySelector("[playerScore]");
 
-    const playGame = () => {
-        const rockChoice = document.querySelector(".rock");
-        const paperChoice = document.querySelector(".paper");
-        const scissorsChoice = document.querySelector(".scissors");
-        const playerChoices = [rockChoice, paperChoice, scissorsChoice];
-        const computerChoices = ["rock", "paper", "scissors"];
+const rounds = 0;
+const playerScore = 0;
+const computerScore = 0;
 
-        playerChoices.forEach(choice => {
-            choice.addEventListener("click", function () {
-                let roundIncrease = document.querySelector(".roundNumber");
-                roundCount++;
-                let randomChoice = Math.floor(Math.random() * 3);
-                let computerSelection = computerChoices[randomChoice];
-                console.log(computerSelection);
-                console.log(choice);
-                victor(this.innerText, computerSelection);
+const choices = [
+    {
+        name: "rock",
+        beats: "paper"
+    },
+    {
+        name: "paper",
+        beats: "rock"
+    },
+    {
+        name: "scissors",
+        beats: "paper"
+    }
+];
+// Button event listener to grab name property value
+choiceButtons.forEach(choiceButton => {
+    choiceButton.addEventListener("click", event => {
+        let choiceName = choiceButton.dataset.choice;
+        let choice = choices.find(choice => choice.name === choiceName);
+        console.log(choice);
+        makeChoice(choice);
+    });
+});
 
-                if (roundCount == 5) {
-                    gameOver(playerChoices, roundIncrease);
-                }
-            });
-        });
-    };
+// Function to create random computer number
+function computerRandom() {
+    let randomChoice = Math.floor(Math.random() * choices.length);
+    randomChoice = choices.toString();
+    console.log(randomChoice);
+    return choices[randomChoice];
 
-    let victor = (player, computer) => {
-        let resultOutput = document.querySelector(".arenaVictorOutput");
-        let playerScoreDisplay = document.querySelector(".playerScore");
-        let computerScoreDisplay = document.querySelector(".computerScore");
-        if (player === computer) {
-            resultOutput.textContent = "Draw";
-        } else if (player == "rock") {
-            if (computer == "paper") {
-                resultOutput.textContent = "Computer wins!";
-                computerCount++;
-                computerScoreDisplay.textContent = computerCount;
+}
 
-            } else {
-                resultOutput.textContent = "Player wins!";
-                playerCount++;
-                playerScoreDisplay.textContent = playerCount;
-            }
+// Turn action
+function makeChoice(choice) {
+    const enemyChoice = computerRandom();
+    //const playerWins = winner(choice, enemyChoice)
+    //const computerWins = winner(enemyChoice, choice)
+}
+
+//Game over function
+if (rounds == 5) {
+    gameOver();
+}
+
+// Determine outcome
+const outcome = (choice, computerRandom) => {
+    let resultOutput = document.querySelector(".arenaVictorOutput");
+    let playerScoreDisplay = document.querySelector(".playerScore");
+    let computerScoreDisplay = document.querySelector(".computerScore");
+    if (player === computer) {
+        resultOutput.textContent = "Draw!";
+    } else if (player == "rock") {
+        if (computer == "paper") {
+            resultOutput.textContent = "Computer wins!";
+            computerCount++;
+            computerScoreDisplay.textContent = computerCount;
+
+        } else {
+            resultOutput.textContent = "Player wins!";
+            playerCount++;
+            playerScoreDisplay.textContent = playerCount;
         }
-        else if (player == "scissors") {
-            if (computer == "rock") {
-                resultOutput.textContent = "Computer wins!";
-                computerCount++;
-                computerScoreDisplay.textContent = computerCount;
-            } else {
-                resultOutput.textContent = "Player wins!";
-                playerCount++;
-                playerScoreDisplay.textContent = playerCount;
-            }
+    }
+    else if (player == "scissors") {
+        if (computer == "rock") {
+            resultOutput.textContent = "Computer wins!";
+            computerCount++;
+            computerScoreDisplay.textContent = computerCount;
+        } else {
+            resultOutput.textContent = "Player wins!";
+            playerCount++;
+            playerScoreDisplay.textContent = playerCount;
         }
-        else if (player == "paper") {
-            if (computer == "scissors") {
-                resultOutput.textContent = "Computer wins!";
-                computerCount++;
-                computerScoreDisplay.textContent = computerCount;
-            } else {
-                resultOutput.textContent = "Player wins!";
-                playerCount++;
-                playerScoreDisplay.textContent = playerCount;
-            }
+    }
+    else if (player == "paper") {
+        if (computer == "scissors") {
+            resultOutput.textContent = "Computer wins!";
+            computerCount++;
+            computerScoreDisplay.textContent = computerCount;
+        } else {
+            resultOutput.textContent = "Player wins!";
+            playerCount++;
+            playerScoreDisplay.textContent = playerCount;
         }
-    };
-
-    let gameOver = (playerChoices, roundIncrease) => {
-        const chooseWeapon = document.querySelector(".weapon-choice-instruction");
-        const resultOutput = document.querySelector(".arenaVictorOutput");
-        const replayButton = document.querySelector(".replay");
-
-        playerChoices.forEach(choice => {
-            choice.style.display = "none";
-        });
-        chooseWeapon.innerText = "Game Over!";
-        replayButton.innerHTML += "<button>Replay: to be a weiner</button >";
-        replayButtonstyle.display = "flex";
-        replayButton.addEventListener("click", () => {
-            window.location.reload();
-        });
-    };
-    playGame();
+    }
 };
-game();
 
+// Game over feature
+let gameOver = (playerChoices, roundIncrease) => {
+    const chooseWeapon = document.querySelector(".weapon-choice-instruction");
+    const resultOutput = document.querySelector(".arenaVictorOutput");
+    const replayButton = document.querySelector(".replay");
 
-
-
-// Modal 
+    playerChoices.forEach(choice => {
+        choice.style.display = "none";
+    });
+    chooseWeapon.innerText = "Game Over!";
+    replayButton.innerHTML += "<button>Replay: to be a weiner</button >";
+    replayButtonstyle.display = "flex";
+    replayButton.addEventListener("click", () => {
+        window.location.reload();
+    });
+};
+// Modal for help button
 
 //Variable declarations
 const modal = document.getElementById("my-modal");

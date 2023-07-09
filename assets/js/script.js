@@ -1,69 +1,70 @@
 // Main game 
+const buttons = document.querySelectorAll(".player-weapon-choice-button");
+const choices = ["rock", "paper", 'scissors'];
+const computerRandom = choices[Math.floor(Math.random() * choices.length)];
+const updateScores = document.getElementsByClassName("playerScore", "computerScore");
 
-let buttons = document.querySelectorAll(".player-weapon-choice-button");
-let playerTotal = document.getElementById("playerScore");
-let computerTotal = document.getElementById("computerScore");
-let playerImage = document.getElementsByClassName(".hands-image");
-let choices = ["rock", "paper", "scissors"];
-
-let playerScore = 0;
-let computerScore = 0;
-let accruedRounds = 0;
 
 for (let button of buttons) {
     button.addEventListener("click", function () {
-        let userChoice = this.getAttribute("data-choice");
-        runGame(userChoice);
-        console.log(userChoice);
+        let playerChoice = this.getAttribute("data-choice");
+        playGame(playerChoice);
+        console.log(playerChoice);
     });
+
 }
 
-function runGame(userChoice) {
+function playGame(playerChoice) {
+    let computerRandom = choices[Math.floor(Math.random() * choices.length)];
+    console.log(computerRandom);
+    function checkWinner() {
+        if (playerChoice === computerRandom) {
+            arenaVictorOutput.textContent = "Draw!";
+        }
+        if (playerChoice == "rock") {
+            if (computerRandom === "paper") {
+                arenaVictorOutput.textContent += "Computer won!";
+                computerScore++;
+            } else {
+                arenaVictorOutput.textContent += "Player won!";
+                playerScore++;
+            }
+        }
+        else if (playerChoice == "scissors") {
+            if (computerRandom === "rock") {
+                arenaVictorOutput.textContent += "Computer won!";
+                computerScore++;
+            } else {
+                arenaVictorOutput.textContent += "Player won!";
+                playerScore++;
+            }
+        }
+        else if (playerChoice == "paper") {
+            if (computerRandom === "scissors") {
+                arenaVictorOutput.textContent += "Computer won!";
+                computerScore++;
+            } else {
+                arenaVictorOutput.textContent += "Player won!";
+                playerScore++;
+            }
+        }
+    }
+    let result = checkWinner(choices[computerRandom], choices[playerChoice]);
+    function updateScores(result) {
+        if (arenaVictorOutput === "Computer won!") {
+            let incrementComputerScore = parseInt(computerScore.innerText);
+            computerScore.innerText = ++incrementComputerScore;
+        }
+        else if (arenaVictorOutput === "Player won!") {
+            let incrementuserScore = parseInt(userScore.innerText);
+            userScore.innerText = ++incrementuserScore;
+        }
+    }
 
-    // playerImage.src = `assets/images/${choices[userChoice]}.png`;
-    // playerImage.alt = choices[userChoice];
-
-    let computerChoice = choices[Math.floor(Math.random() * choices.length)];
-    console.log(computerChoice);
-
-    let result = checkWinner(choices[computerChoice], choices[userChoice]);
-
-    updateScores(result);
 }
 
-function checkWinner(player, computer) {
-    let arenaVictorOutput = document.querySelector(".arenaVictorOutput");
-    if (player === computer) {
-        arenaVictorOutput.textContent = "Draw!";
-    }
-    if (player == "rock") {
-        if (computer === "paper") {
-            arenaVictorOutput.textContent += "Computer won!";
-            computerScore++;
-        } else {
-            arenaVictorOutput.textContent += "Player won!";
-            playerScore++;
-        }
-    }
-    else if (player == "scissors") {
-        if (computer === "rock") {
-            arenaVictorOutput.textContent += "Computer won!";
-            computerScore++;
-        } else {
-            arenaVictorOutput.textContent += "Player won!";
-            playerScore++;
-        }
-    }
-    else if (player == "paper") {
-        if (computer === "scissors") {
-            arenaVictorOutput.textContent += "Computer won!";
-            computerScore++;
-        } else {
-            arenaVictorOutput.textContent += "Player won!";
-            playerScore++;
-        }
-    }
-}
+
+
 
 
 

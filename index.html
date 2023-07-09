@@ -45,14 +45,12 @@
         <div class="game-outer-container">
             <h2 class="weapon-choice-instruction">Choose your weapon!</h2>
             <div class="player-weapon-container">
-                <button aria-label="Rock" class="player-weapon-choice-button" data-choice="rock"><img
-                        class="hands-image" src="assets/images/Rock.png" alt="Image of hand in shape of rock"></button>
-                <button aria-label="Paper" class="player-weapon-choice-button" data-choice="paper"><img
-                        class="hands-image" src="assets/images/Paper.png"
-                        alt="Image of hand in shape of paper"></button>
-                <button aria-label="Scissors" class="player-weapon-choice-button" data-choice="scissors"><img
-                        class="hands-image" src="assets/images/Scissors.png"
-                        alt="Image of hand in shape of scissors"></button>
+                <button aria-label="Rock" class="player-weapon-choice-button" id="rock"><img class="hands-image"
+                        src="assets/images/Rock.png" alt="Image of hand in shape of rock"></button>
+                <button aria-label="Paper" class="player-weapon-choice-button" id="paper"><img class="hands-image"
+                        src="assets/images/Paper.png" alt="Image of hand in shape of paper"></button>
+                <button aria-label="Scissors" class="player-weapon-choice-button" id="scissors"><img class="hands-image"
+                        src="assets/images/Scissors.png" alt="Image of hand in shape of scissors"></button>
             </div>
         </div>
         <div class="arena-terminal">
@@ -71,7 +69,7 @@
                 <p>Round number:<span id="roundNumber">0</span></p>
             </div>
             <div class="player-score">
-                <p>Player score:<span id="userScore">0</span></p>
+                <p>Player score:<span id="playerScore">0</span></p>
             </div>
             <div class="computer-score">
                 <p>Computer score:<span id="computerScore">0</span></p>

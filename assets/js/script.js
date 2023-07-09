@@ -7,9 +7,9 @@ const game = () => {
     let roundCount = 0;
 
     const playGame = () => {
-        const rockChoice = document.getElementById("rock");
-        const paperChoice = document.getElementById("paper");
-        const scissorsChoice = document.getElementById("scissors");
+        const rockChoice = document.querySelector(".rock");
+        const paperChoice = document.querySelector(".paper");
+        const scissorsChoice = document.querySelector(".scissors");
         const playerChoices = [rockChoice, paperChoice, scissorsChoice];
         const computerChoices = ["rock", "paper", "scissors"];
 
@@ -17,11 +17,10 @@ const game = () => {
             choice.addEventListener("click", function () {
                 let roundIncrease = document.querySelector(".roundNumber");
                 roundCount++;
-                roundIncrease++;
-
-                const randomChoice = Math.floor(Math.random() * 3);
-                const computerSelection = computerChoices[randomChoice];
-
+                let randomChoice = Math.floor(Math.random() * 3);
+                let computerSelection = computerChoices[randomChoice];
+                console.log(computerSelection);
+                console.log(choice);
                 victor(this.innerText, computerSelection);
 
                 if (roundCount == 5) {
@@ -31,13 +30,13 @@ const game = () => {
         });
     };
 
-    const victor = (player, computer) => {
-        const resultOutput = document.querySelector(".arenaVictorOutput");
-        const playerScoreDisplay = document.querySelector(".playerScore");
-        const computerScoreDisplay = document.querySelector(".computerScore");
+    let victor = (player, computer) => {
+        let resultOutput = document.querySelector(".arenaVictorOutput");
+        let playerScoreDisplay = document.querySelector(".playerScore");
+        let computerScoreDisplay = document.querySelector(".computerScore");
         if (player === computer) {
             resultOutput.textContent = "Draw";
-        } else if (player === "rock") {
+        } else if (player == "rock") {
             if (computer == "paper") {
                 resultOutput.textContent = "Computer wins!";
                 computerCount++;
@@ -73,29 +72,16 @@ const game = () => {
         }
     };
 
-    const gameOver = (playerChoices, roundIncrease) => {
+    let gameOver = (playerChoices, roundIncrease) => {
         const chooseWeapon = document.querySelector(".weapon-choice-instruction");
         const resultOutput = document.querySelector(".arenaVictorOutput");
-        const replayButton = document.querySelector(".arenaVictorOutput");
+        const replayButton = document.querySelector(".replay");
 
         playerChoices.forEach(choice => {
             choice.style.display = "none";
         });
         chooseWeapon.innerText = "Game Over!";
-        roundIncrease.style.display = "none";
-
-        if (playerCount > computerCount) {
-            resultOutput.style.fontSize = "3rem";
-            resultOutput.style.fontSize = "You are a weiner!";
-        }
-        else if (playerCount < computerCount) {
-            resultOutput.style.fontSize = "3rem";
-            resultOutput.style.fontSize = "You are a loser!";
-        } else {
-            resultOutput.style.fontSize = "3rem";
-            resultOutput.style.fontSize = "Draw! (computer is the winner really, loser...";
-        }
-        replayButton.innerText = "Replay: to and be a weiner";
+        replayButton.innerHTML += "<button>Replay: to be a weiner</button >";
         replayButtonstyle.display = "flex";
         replayButton.addEventListener("click", () => {
             window.location.reload();

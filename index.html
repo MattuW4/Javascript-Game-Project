@@ -45,37 +45,40 @@
         <div class="game-outer-container">
             <h2 class="weapon-choice-instruction">Choose your weapon!</h2>
             <div class="player-weapon-container">
-                <button aria-label="Rock" class="player-weapon-choice-button" id="rock"><img class="hands-image"
-                        src="assets/images/Rock.png" alt="Image of hand in shape of rock"></button>
-                <button aria-label="Paper" class="player-weapon-choice-button" id="paper"><img class="hands-image"
-                        src="assets/images/Paper.png" alt="Image of hand in shape of paper"></button>
-                <button aria-label="Scissors" class="player-weapon-choice-button" id="scissors"><img class="hands-image"
-                        src="assets/images/Scissors.png" alt="Image of hand in shape of scissors"></button>
+                <button aria-label="Rock" class="player-weapon-choice-button rock" data-choice="rock"><img
+                        class="hands-image" src="assets/images/Rock.png" alt="Image of hand in shape of rock"></button>
+                <button aria-label="Paper" class="player-weapon-choice-button paper" data-choice="paper"><img
+                        class="hands-image" src="assets/images/Paper.png"
+                        alt="Image of hand in shape of paper"></button>
+                <button aria-label="Scissors" class="player-weapon-choice-button scissors" data-choice="scissors"><img
+                        class="hands-image" src="assets/images/Scissors.png"
+                        alt="Image of hand in shape of scissors"></button>
             </div>
         </div>
         <div class="arena-terminal">
             <div class="player-choice-output">
-                <p>Player choice:<span id="playerChoice"></span></p>
+                <p id="playerChoice">Player choice:</p>
             </div>
             <div class="computer-choice-output">
-                <p>Computer Choice:<span id="computerChoice"></span></p>
+                <p id="computerChoice">Computer Choice:</p>
             </div>
             <div class="arena-victor-output">
-                <p>Winner:<span id="arenaVictorOutput"></span></p>
+                <p id="arenaVictorOutput">Winner:</p>
             </div>
         </div>
         <div class="overall-results">
             <div class="round-number">
-                <p>Round number:<span id="roundNumber">0</span></p>
+                <p id="roundNumber">Round number:</p>
             </div>
             <div class="player-score">
-                <p>Player score:<span id="playerScore">0</span></p>
+                <p id="playerScore">Player score:</p>
             </div>
             <div class="computer-score">
-                <p>Computer score:<span id="computerScore">0</span></p>
+                <p id="computerScore">Computer score:</p>
             </div>
         </div>
     </section>
+    <div id="replay"></div>
 
     <!-- Footer -->
     <footer>

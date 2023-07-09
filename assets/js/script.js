@@ -3,7 +3,9 @@ const buttons = document.querySelectorAll(".player-weapon-choice-button");
 const choices = ["rock", "paper", 'scissors'];
 const computerRandom = choices[Math.floor(Math.random() * choices.length)];
 const updateScores = document.getElementsByClassName("playerScore", "computerScore");
-
+const result = document.getElementById("arenaVictorOutput");
+const computerScore = document.getElementById("computerScore");
+const userScore = document.getElementById("userScore");
 
 for (let button of buttons) {
     button.addEventListener("click", function () {
@@ -20,32 +22,31 @@ function playGame(playerChoice) {
     function checkWinner() {
         if (playerChoice === computerRandom) {
             arenaVictorOutput.textContent = "Draw!";
-        }
-        if (playerChoice == "rock") {
+        } else if (playerChoice == "rock") {
             if (computerRandom === "paper") {
                 arenaVictorOutput.textContent += "Computer won!";
-                computerScore++;
+                computerScore.innerHTML++;
             } else {
                 arenaVictorOutput.textContent += "Player won!";
-                playerScore++;
+                userScore.innerHTML++;
             }
         }
         else if (playerChoice == "scissors") {
             if (computerRandom === "rock") {
                 arenaVictorOutput.textContent += "Computer won!";
-                computerScore++;
+                computerScore.innerHTML++;
             } else {
                 arenaVictorOutput.textContent += "Player won!";
-                playerScore++;
+                userScore.innerHTML++;
             }
         }
         else if (playerChoice == "paper") {
             if (computerRandom === "scissors") {
                 arenaVictorOutput.textContent += "Computer won!";
-                computerScore++;
+                computerScore.innerHTML++;
             } else {
                 arenaVictorOutput.textContent += "Player won!";
-                playerScore++;
+                userScore.innerHTML++;
             }
         }
     }
